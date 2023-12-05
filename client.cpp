@@ -75,19 +75,17 @@ int main(int argc, char* argv[])
 	request->Print(request_str);
 	std::cout << "Request string: " << request_str;
 
+	send(tcp_sock, &request, sizeof(request), 0);
+
+	// recv and then parse that info to check if its a valid response
+
+
 	// std::string response;
 	// if (!request->Get_header_value("HTTP/1.1", response))
 	// {
 	// 	std::cout << "Failed to read response from server"
 	// }
 	
-
-	if (request == nullptr)
-	{
-		cerr << "Request failed." << endl;
-		return 5;
-	}
-
 
 
 
